@@ -44,11 +44,11 @@ buttonSubmitEl.addEventListener('click',
         console.log(document.getElementById('user').value);
 
         //chiedere all'utente i km da percorrere con input e registrarli
-        const kmValue = document.getElementById('km').value;
+        document.getElementById('km').value;
         console.log(document.getElementById('km').value);
 
         //chiedere all'utente la fascia d'età con select e registrarla
-        const ageValue = document.getElementById('ageRange').value;
+        document.getElementById('ageRange').value;
         console.log(document.getElementById('ageRange').value);
 
         //definire la variabile del prezzo al chilomentro (euro 0,21)
