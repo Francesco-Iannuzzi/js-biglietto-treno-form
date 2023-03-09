@@ -1,9 +1,15 @@
 :root
 {
     --my-back: #b91450;
+    --my-backname: #808080;
 }
 
 .my_back
 {
     background-color: var(--my-back);
+}
+
+.my_backname
+{
+    background-color: var(--my-backname);
 }
