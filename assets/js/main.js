@@ -113,8 +113,13 @@ const buttonResetEl = document.getElementById('reset')
 buttonResetEl.addEventListener('click',
 
     function () {
-        const inputEl = document.querySelector('input')
-        inputEl.innerHTML = 'ciao'
+
+        const deleteUserEl = document.getElementById('user');
+        deleteUserEl.innerText = (`ciao`);
+
+        const deleteKmEl = document.getElementById('km');
+        deleteKmEl.innerText = (`ciao`);
+
     }
 
 );

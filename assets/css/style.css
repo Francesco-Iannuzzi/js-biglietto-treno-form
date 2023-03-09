@@ -2,6 +2,7 @@
 {
     --my-back: #b91450;
     --my-backname: #808080;
+    --my-evi: #e99952;
 }
 
 .my_back
@@ -12,4 +13,29 @@
 .my_backname
 {
     background-color: var(--my-backname);
+}
+
+.my_tx_back
+{
+    color: var(--my-back);
+}
+
+.my_tx_backname
+{
+    color: var(--my-backname);
+}
+
+.my_border_back
+{
+    border: 2px solid #b91450;
+}
+
+#submit:hover
+{
+    border: solid var(--my-evi);
+}
+
+#reset:hover
+{
+    border: solid var(--my-evi);
 }
