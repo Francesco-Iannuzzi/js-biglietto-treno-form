@@ -42,9 +42,11 @@ buttonSubmitEl.addEventListener('click',
         //chiedere all'utente il nome e cognome con input e registrarla
         const nameValue = document.getElementById('user').value;
         console.log(document.getElementById('user').value);
+
         //chiedere all'utente i km da percorrere con input e registrarli
         const kmValue = document.getElementById('km').value;
         console.log(document.getElementById('km').value);
+
         //chiedere all'utente la fascia d'età con select e registrarla
         const ageValue = document.getElementById('ageRange').value;
         console.log(document.getElementById('ageRange').value);
@@ -70,24 +72,52 @@ buttonSubmitEl.addEventListener('click',
         //transformare il prezzo in modo che abbia un massimo di due numeri decimali
         price = price.toFixed(2);
 
+        //stampiamo il biglietto indicando il prezzo ed il tipo di biglietto usando getElementById
+        const h5PassengerEl = document.getElementById ('namePassenger');
+        h5PassengerEl.innerText = `${nameValue}`;
+
+        //indicare sul biglietto se è un biglietto per minorenni, maggiorenni o over 65
+        const spanPlanEl = document.getElementById ('plan');
+        if (document.getElementById('ageRange').value == 'minorenne') {
+           spanPlanEl.innerText = `Biglietto Minorenni`
+
+        } else if (document.getElementById('ageRange').value == 'maggiorenne') {
+            spanPlanEl.innerText = `Biglietto Standard`;
+
+        } else if (document.getElementById('ageRange').value == 'over65') {
+            spanPlanEl.innerText = `Biglietto Over 65`;
+        }
+
+        //generare un numero casuale con math.floor(Math.random() * 9) + 1) per la carrozza e stamparlo a schermo
+        const randomCarriage = Math.floor(Math.random() * 9) + 1;
+        console.log(randomCarriage);
+        const spanCarriageEl = document.getElementById(carriage);
+        carriage.innerText = `${randomCarriage}`
+
+        //generare un numero casuale con math.floor(Math.random() * 10000) + 1) per il codice cp e stamparlo a schermo
+        const randomCodeCP = Math.floor(Math.random() * 99999) + 1;
+        console.log(randomCodeCP);
+        const spanCodeCPEl = document.getElementById(codeCP);
+        codeCP.innerText = `${randomCodeCP}`
+
+        //stampare il prezzo finale sul biglietto
+        const spanFinalPriceEl = document.getElementById ('finalPrice');
+        spanFinalPriceEl.innerText = `€ ${price}`;
+
     }
 
 );
 
+//cancellare il testo negli input
 const buttonResetEl = document.getElementById('reset')
 buttonResetEl.addEventListener('click',
 
     function () {
-        document.getElementById("user").innerText = `ciao`;
-        document.getElementById("km").innerText = 'ciao';
+        const inputEl = document.querySelector('input')
+        inputEl.innerHTML = 'ciao'
     }
 
 );
 
 
 
-//stampiamo il biglietto indicando il prezzo e tipo di biglietto usando getElementById
-
-//generare un numero casuale con math.floor(Math.random() * 9) + 1) per la carrozza e stamparlo a schermo
-
-//generare un numero casuale con math.floor(Math.random() * 10000) + 1) per il codice cp e stamparlo a schermo
