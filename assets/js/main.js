@@ -25,49 +25,69 @@ Il riepilogo dei dati inseriti e l'output del prezzo finale, andranno quindi sta
     - .toFixed()
     - if / else
     - getElementById / querySelector
+    - element.value
     - addEventListener
     - function ()
+    - Math.floor
+    - Math.random
 */
 
-//chiedere all'utente il nome e cognome con input e registrarla
-const inputTextEl = document.getElementById('user');
-console.log(inputTextEl.innerText);
-//chiedere all'utente i km da percorrere con input e registrarli
-const inputNumberEl = document.getElementById('km');
-console.log(inputNumberEl.innerText);
 
-//chiedere all'utente la fascia d'età con select e registrarla
-const selectAgeRangeEl = document.getElementById('ageRange').value = 'minorenne';
-console.log(selectAgeRangeEl.innerText);
+//far inviare i dati dall'utente cliccando sul bottone "genera"
+const buttonSubmitEl = document.getElementById('submit')
+buttonSubmitEl.addEventListener('click',
 
-//definire la variabile del prezzo al chilomentro (euro 0,21)
-const pricePerKilometre = 0.21;
-console.log(pricePerKilometre);
+    function () {
 
-//calcolare il prezzo del biglietto moltiplicando il numero di chilometri per il prezzo al chilometro
-let price = inputNumberEl.innerText * pricePerKilometre;
-console.log(price);
+        //chiedere all'utente il nome e cognome con input e registrarla
+        const nameValue = document.getElementById('user').value;
+        console.log(document.getElementById('user').value);
+        //chiedere all'utente i km da percorrere con input e registrarli
+        const kmValue = document.getElementById('km').value;
+        console.log(document.getElementById('km').value);
+        //chiedere all'utente la fascia d'età con select e registrarla
+        const ageValue = document.getElementById('ageRange').value;
+        console.log(document.getElementById('ageRange').value);
 
-//verificare se l'utente ha un'età inferiore ai 18 anni ed applicare lo sconto del 20% o se l'utente ha un'età superiore ai 65 anni ed applicare lo sconto del 40%
+        //definire la variabile del prezzo al chilomentro (euro 0,21)
+        const pricePerKilometre = 0.21;
+        console.log(pricePerKilometre);
 
-/*
-if (userAge < 18) {
-    price -= (price * 0.20);
-    console.log(price);
+        //calcolare il prezzo del biglietto moltiplicando il numero di chilometri per il prezzo al chilometro
+        let price = document.getElementById('km').value * pricePerKilometre;
+        console.log(price);
 
-} else if (userAge > 65) {
-    price -= (price * 0.40);
-    console.log(price);
-}
-*/
+        //verificare se l'utente ha un'età inferiore ai 18 anni ed applicare lo sconto del 20% o se l'utente ha un'età superiore ai 65 anni ed applicare lo sconto del 40%
+        if (document.getElementById('ageRange').value == 'minorenne') {
+            price -= (price * 0.20);
+            console.log(price);
 
-// transformare il prezzo in modo che abbia un massimo di due numeri decimali
-//price = price.toFixed(2);
+        } else if (document.getElementById('ageRange').value == 'over65') {
+            price -= (price * 0.40);
+            console.log(price);
+        }
 
-//aggiungere un h1 con id per mostrare il prezzo in schermata
+        //transformare il prezzo in modo che abbia un massimo di due numeri decimali
+        price = price.toFixed(2);
 
-//selezionare e salvare in una variabile l'elemento della dom con getElementById
-//const element = document.getElementById('finalPrice');
+    }
 
-//comunicare all'utente il costo del biglietto
-//element.innerHTML=`Il prezzo per il tuo biglietto è di ${price} euro`;
+);
+
+const buttonResetEl = document.getElementById('reset')
+buttonResetEl.addEventListener('click',
+
+    function () {
+        document.getElementById("user").innerText = `ciao`;
+        document.getElementById("km").innerText = 'ciao';
+    }
+
+);
+
+
+
+//stampiamo il biglietto indicando il prezzo e tipo di biglietto usando getElementById
+
+//generare un numero casuale con math.floor(Math.random() * 9) + 1) per la carrozza e stamparlo a schermo
+
+//generare un numero casuale con math.floor(Math.random() * 10000) + 1) per il codice cp e stamparlo a schermo
