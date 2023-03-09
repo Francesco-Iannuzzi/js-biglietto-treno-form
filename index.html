@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,53 @@
     <title>Train ticket</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
 
+    <main>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <h1>calcola il prezzo del tuo biglietto</h1>
+                    <form action="">
+                        <div class="card">
+                            <label for="user">Nome e Cognome</label>
+                            <input type="text" name="user" id="user">
+                        <!-- richiesta di nome e cognome -->
+                        
+                        <label for="km">Chilometri da percorrere</label>
+                        <input type="number" name="km" id="km">
+                        <!-- richiesta dei km da percorrere -->
+                        
+                        <label for="ageRange">Fascia d'età</label>
+                        <select name="ageRange" id="ageRange">
+                            <option value="minorenne">Minorenne</option>
+                            <option value="maggiorenne">Maggiorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                        <!-- richiesta fascia d'età -->
+                        </div>
     
+                        <input type="submit" value="Genera">
+                        <input type="reset" value="Annulla">
+                    </form>
+    
+                </div>
+                <!-- col -->
+
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- container -->
+
+    </main>
 
     <script src="./assets/js/main.js"></script>
-    
+
 </body>
+
 </html>
