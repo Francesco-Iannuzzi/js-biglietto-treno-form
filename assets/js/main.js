@@ -115,10 +115,10 @@ buttonResetEl.addEventListener('click',
     function () {
 
         const deleteUserEl = document.getElementById('user');
-        deleteUserEl.innerText = `ciao`;
+        deleteUserEl.value = ``;
 
         const deleteKmEl = document.getElementById('km');
-        deleteKmEl.innerText = `ciao`;
+        deleteKmEl.value = ``;
 
     }
 
