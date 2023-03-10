@@ -91,13 +91,13 @@ buttonSubmitEl.addEventListener('click',
         //generare un numero casuale con math.floor(Math.random() * 9) + 1) per la carrozza e stamparlo a schermo
         const randomCarriage = Math.floor(Math.random() * 9) + 1;
         console.log(randomCarriage);
-        const spanCarriageEl = document.getElementById(carriage);
+        document.getElementById(carriage);
         carriage.innerText = `${randomCarriage}`
 
         //generare un numero casuale con math.floor(Math.random() * 10000) + 1) per il codice cp e stamparlo a schermo
         const randomCodeCP = Math.floor(Math.random() * 99999) + 1;
         console.log(randomCodeCP);
-        const spanCodeCPEl = document.getElementById(codeCP);
+        document.getElementById(codeCP);
         codeCP.innerText = `${randomCodeCP}`
 
         //stampare il prezzo finale sul biglietto
@@ -115,10 +115,10 @@ buttonResetEl.addEventListener('click',
     function () {
 
         const deleteUserEl = document.getElementById('user');
-        deleteUserEl.innerText = (`ciao`);
+        deleteUserEl.innerText = `ciao`;
 
         const deleteKmEl = document.getElementById('km');
-        deleteKmEl.innerText = (`ciao`);
+        deleteKmEl.innerText = `ciao`;
 
     }
 
